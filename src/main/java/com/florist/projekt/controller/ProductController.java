@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class ProductController {
 
-    //@Value("${app.header.product}")
+
     private String name;
 
     @Autowired
