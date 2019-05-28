@@ -4,23 +4,53 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title  th:text="${title}"></title>
+    <title  th:text="${title}">Product List</title>
 </head>
 <body>
 
 
 <div th:insert="header :: header"></div>
 
+<!--<table>-->
 
-<div class="row" th:each = "product : ${products}">
+    <!--<tr>-->
+
+        <!--<th width="" 200px>Nazwa</th>-->
+        <!--<th width="" 200px>Cena</th>-->
+
+    <!--</tr>-->
+
+    <!--<tr th:each = "product : ${products}">-->
+        <!--&lt;!&ndash;<td th:text="${product.id}"></td>&ndash;&gt;-->
+        <!--<td th:text="${product.productName}"></td>-->
+        <!--<td th:text="${product.productPrice}">Price</td>-->
+
+    <!--</tr>-->
+
+    <!--</table>-->
+
+
+
+<div class="product-preview-container" th:each = "product : ${products}">
     <div class="col-sm-6">
         <div class="card" >
 
             <div class="card-body">
                 <h5 class="card-title" th:text="${product.productName}"></h5>
-                <p class="card-text" th:text="${product.productPrice}"></p>
+                <p class="card-text" th:text="${product.productPrice}">Price</p>
+
+
+
+                <button type="submit" name="buynow" >Buy now</button>
 
             </div>
+
+
+
+
+
+
+
         </div>
     </div>
 

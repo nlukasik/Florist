@@ -1,19 +1,17 @@
 package com.florist.projekt.domain;
 
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity(name = "product")
 @Table
 public class Product {
 
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_product")
     private int productId;
     @Column(name = "name")
     private String productName;
@@ -51,5 +49,30 @@ public class Product {
     }
 
     public Product() {
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return productId == product.productId &&
+                Double.compare(product.productPrice, productPrice) == 0 &&
+                Objects.equals(productName, product.productName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productId, productName, productPrice);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                '}';
     }
 }
