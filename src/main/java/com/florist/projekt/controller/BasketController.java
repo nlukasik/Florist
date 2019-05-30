@@ -21,7 +21,7 @@ public class BasketController {
 
         public ModelAndView BasketPage (ModelAndView model) throws IOException {
 
-            model.setViewName("product");
+            model.setViewName("basket");
 
         return model;
     }

@@ -23,7 +23,7 @@ public class ProductController {
     @Autowired
     private ProductImpl product;
 
-    @GetMapping("/products")
+    @GetMapping("/product")
     public ModelAndView ListProducts(ModelAndView model) throws IOException {
         List<Product> listProducts = product.findAll();
         model.addObject("name", name);
