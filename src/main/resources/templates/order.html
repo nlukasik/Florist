@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="Windows-88592">
-    <title  th:text="${title}"></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title  th:text="${title}">Zamowienie</title>
 </head>
 <body>
 
-<h1 th:text="${title}"></h1>
 
-<table>
-    <tr th:each="colorsRow : ${colors}">
-        <td width="100px" height="100px"
-            th:each="color: ${colorsRow}"
-            th:attr="bgcolor=${color}"
-            th:onclick="'location.href= \' ' + @{/select/{c}(c=${color})} + ' \' '"
-        >
-        </td>
-    </tr>
-</table>
+<div th:insert="header :: header"></div>
+
+<div th:insert="footer :: footer"></div>
 
 </body>
 </html>

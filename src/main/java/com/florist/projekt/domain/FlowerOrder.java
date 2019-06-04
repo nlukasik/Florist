@@ -11,23 +11,25 @@ public class FlowerOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
+    private Integer orderId;
+    @Column(name = "name")
     private String name;
+    @Column(name = "lastName")
     private String lastName;
-    private String flower;
-    private String adres;
+    @Column(name = "id_product")
+    private String productId;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "adress")
+    private String adress;
 
-    public FlowerOrder() {
-        this.flower=flower;
 
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
     public String getName() {
@@ -46,19 +48,31 @@ public class FlowerOrder {
         this.lastName = lastName;
     }
 
-    public String getFlower() {
-        return flower;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setFlower(String flower) {
-        this.flower = flower;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+
+    public FlowerOrder() {
     }
 }
