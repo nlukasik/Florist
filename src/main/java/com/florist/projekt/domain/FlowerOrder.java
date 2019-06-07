@@ -12,8 +12,6 @@ public class FlowerOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer orderId;
-    @Column
-    private Integer quantity;
     @Column(name = "name")
     private String name;
     @Column(name = "lastName")
@@ -22,11 +20,9 @@ public class FlowerOrder {
     private String productId;
     @Column(name = "email")
     private String email;
-    @Column(name = "address")
-    private String address;
+    @Column(name = "adress")
+    private String adress;
 
-    public FlowerOrder() {
-    }
 
     public Integer getOrderId() {
         return orderId;
@@ -68,23 +64,15 @@ public class FlowerOrder {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
-    public String toString(){
-        return this.name;
-    }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public FlowerOrder() {
     }
 }
